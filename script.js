@@ -1,0 +1,127 @@
+// mutable methods - push, pop, shift, unshift, splice, reverse, fill
+// Immutable or not mutable methods - concat, slice, join, includes, indexOf
+// Iteration methods - forEach, map, filter, some, every, find, findIndex, sort, reduce, reduceRight
+
+/* const numbers = [1, 2, 3, 4]
+const part = numbers.slice(1, 3)
+console.log(part);                   // result: 2, 3
+ 
+/* const numbers = [10, 20, 30, 40, 50]
+const part = numbers.slice(1, 3)
+console.log(part);                      // result: 20, 30
+
+const fruits = ["apple", "banana", "orange", "mango"]
+const parties = fruits.slice(1, 3)
+console.log(parties); */                  // result: "banana"   "orange"
+
+/* const numbers = [1, 2, 3, 4, 5]
+const part = numbers.slice(2, 4)
+console.log(part);                        // result: 3, 4
+
+const colors = ["red", "blue", "green", "yellow"]
+const parties = colors.slice(1)
+console.log(parties) */                   // result: "blue", "green", "yellow"
+
+/* const colors = ["red", "blue", "green"]
+const color = "red"
+if (colors.includes(color)) {
+  console.log("Цвет правильный")          // result: Цвет правильный 
+} */
+
+/* const numbers = [1, 2, 3]
+numbers.splice(1, 1, 9)
+console.log(numbers) */              // result: 1, 9, 3  mutable method
+
+// Примитивные типы данных - string, number, Boolean, undefined, null, bigInt, symbol
+// Непримитивные типы данных - object, function, array
+
+/* let a = 5
+b = a
+b = 10
+console.log(a);  */  // result: 5
+
+/* let aObject = {
+    number: 5,
+}
+let bObject = aObject
+bobject.number = 10
+console.log(aObject.number); */  // result: 10 так как объект непримитивный тип данных
+
+/* const arr1 = [1, 2, 3]
+const arr2 = arr1
+arr2.push(4)
+console.log(arr1)
+console.log(arr2) */   // result: [1,2,3,4]  [1,2,3,4]
+
+
+                                
+    // Immutable or not mutable methods - concat, slice, join, includes, indexOf
+
+/* let numbers = [1, 2, 3, 4, 5]    
+let numbers1 = [6, 7, 8, 9]  
+console.log(numbers.concat(numbers1)); */   // result: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+                          
+/* const favorites = [
+    {name: "Ronaldo", age: 42}
+    {name: "Joe Biden", age: 39}
+    {name: "Adele", age: 40}
+    {name: "Barak Obama", age: 42}
+    {name: "Beyonce", age: 44}
+    {name: "Justin Bieber", age: 31}
+    {name: "Bil Gates", age: 69}
+    {name: "Jeff Bezos", age: 61}
+    {name: "Mark Zuckerberg", age: 41}
+];
+favorites.forEach((item, index) => {
+    console.log(index);
+})         */                      
+
+
+
+// Home work 4-lesson
+ 
+/* const numbers = [3, 8, 5, 10, 7]
+
+numbers.push(12)
+console.log(numbers);
+
+numbers.shift()
+console.log(numbers);
+
+const numbers2 = numbers.filter((number) => number % 2 === 0);
+console.log(numbers2);
+
+const numbers3 = numbers.map((number) => number * 5);
+console.log(numbers3);
+
+numbers.sort((a, b) => a - b);
+console.log(numbers); */
+
+// 2
+
+const famouses = [
+  { name: "Cristiano Ronaldo", age: 41, role: "footballer" },
+  { name: "Joe Biden", age: 83, role: "politician" },
+  { name: "Adele", age: 37, role: "singer" },
+  { name: "Barack Obama", age: 64, role: "politician" },
+  { name: "Beyonce", age: 44, role: "singer" },
+  { name: "Justin Bieber", age: 31, role: "singer" },
+  { name: "Bill Gates", age: 69, role: "businessman" },
+  { name: "Fatima", age: 17, role: "little sister" },
+  { name: "Mark Zuckerberg", age: 41, role: "businessman" },
+  { name: "Billie Eilish", age: 24, role: "singer" }
+];
+
+const names = famouses.map((famouse) => famouse.name);
+console.log(names);
+
+const descriptions = famouses.map(
+  (famouse) => `${famouse.name} is a ${famouse.role}`
+);
+console.log(descriptions);
+
+const unage = famouses.some((famouse) => famouse.age < 18);
+console.log(unage);
+
+const olderThan20 = famouses.filter((famouse) => famouse.age > 20);
+console.log(olderThan20);
